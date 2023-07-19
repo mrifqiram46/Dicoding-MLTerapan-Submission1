@@ -1,0 +1,350 @@
+
+
+Laporan Proyek Machine Learning - Muhammad Rifqi Muharram
+
+Domain Proyek
+
+Proses perekrutan Data Scientist yang tidak efisien dan mahal dapat
+diatasi dengan menggunakan informasi domain proyek yang relevan. Dengan
+mengidentifikasi Data Scientist yang memiliki pengalaman dan
+keterampilan yang sesuai dengan proyek yang dibutuhkan, perusahaan
+outsourcing dapat menghemat waktu dan uang dalam proses perekrutan.
+Misalnya, perusahaan dapat menggunakan teknik pembelajaran mesin untuk
+memprediksi domain proyek Data Scientist berdasarkan data yang tersedia.
+Jika perusahaan mencari Data Scientist yang berpengalaman dalam
+healthcare, mereka dapat mencari calon kandidat yang sebelumnya pernah
+bekerja di proyek-proyek sektor kesehatan. Dengan demikian, perusahaan
+dapat mempersempit kandidat yang relevan dan mengarahkan sumber daya
+mereka pada kandidat-kandidat yang memiliki peluang lebih tinggi untuk
+berhasil dalam proyek yang sedang dibuka.
+
+Contoh kasus : Perusahaan teknologi besar yang ingin merekrut Data
+Scientist untuk mengembangkan solusi di bidang Internet of Things (IoT).
+Dengan menggunakan informasi domain proyek, perusahaan dapat
+mengidentifikasi calon Data Scientist yang pernah berkontribusi pada
+proyek-proyek IoT sebelumnya, yang menunjukkan kompetensi mereka dalam
+domain tersebut. Hal ini dapat membantu perusahaan mengurangi waktu dan
+biaya dalam mencari kandidat yang tepat, dan pada akhirnya memperkuat
+kemampuan mereka dalam mengembangkan solusi IoT yang inovatif.
+
+Masalah retensi Data Scientist dapat diatasi dengan memahami alasan di
+balik pergantian pekerjaan mereka. Dengan menganalisis data domain
+proyek, perusahaan outsourcing dapat melihat pola dan tren dalam
+pekerjaan Data Scientist yang meninggalkan perusahaan. Misalnya, jika
+banyak Data Scientist meninggalkan pekerjaan mereka untuk beralih ke
+industri healthcare, perusahaan dapat menyelidiki apa yang membuat
+industri ini menarik bagi para ilmuwan data. Berdasarkan temuan ini,
+perusahaan dapat mengambil langkah-langkah untuk meningkatkan daya tarik
+mereka sebagai tempat kerja bagi Data Scientist. Hal ini dapat berupa
+pengembangan program pelatihan khusus untuk proyek healthcare atau
+peningkatan fasilitas dan lingkungan kerja yang lebih sesuai dengan
+minat dan keterampilan Data Scientist.
+
+Contoh Kasus :
+perusahaan teknologi startup yang mengalami tingkat pergantian yang
+tinggi dari Data Scientist. Dengan menganalisis data domain proyek,
+perusahaan menemukan bahwa sebagian besar Data Scientist yang
+meninggalkan perusahaan mencari pekerjaan yang lebih berfokus pada
+proyek-proyek keberlanjutan dan lingkungan. Berdasarkan temuan ini,
+perusahaan memutuskan untuk menawarkan proyek-proyek berbasis
+keberlanjutan yang menarik bagi Data Scientist. Sebagai hasilnya,
+perusahaan berhasil mengurangi tingkat pergantian dan mempertahankan
+Data Scientist berbakat dengan meningkatkan kualitas proyek dan
+lingkungan kerja yang sesuai dengan minat dan keterampilan mereka.
+
+Business Understanding
+
+Problem Statements
+
+-   Bagimana proses perekrutan Data Scientist bisa berjalan secara
+    efektif? karena saat ini perusahaan outsourcing memiliki proses
+    perektrutan yang tidak efisien dan memiliki cost mahal. Rata-rata,
+    dibutuhkan 60 hari untuk mengisi posisi Data Scientist, dan biaya
+    pergantian untuk seorang Data Scientist adalah $150.000.
+-   Bagaimana cara agar data scientist bisa mengejakan proyek sesuai
+    dengan keterampilan dan minat mereka? karena di dalam perusahaan,
+    20% Data Scientist yang berada di domain proyek yang tepat. Artinya,
+    80% ilmuwan data tidak mengerjakan proyek yang sesuai dengan
+    keterampilan dan minat mereka.
+
+Goals
+
+-   Mengurangi biaya perekrutan: Sistem dapat membantu perusahaan
+    mengidentifikasi Data Scientist yang tepat untuk posisi terbuka
+    mereka, yang dapat mengurangi biaya perekrutan.
+-   Meningkatkan kepuasan karyawan: Sistem dapat membantu Data Scientist
+    untuk menemukan pekerjaan yang tepat sesuai dengan keahlian dan
+    minat mereka, yang dapat meningkatkan kepuasan karyawan.
+
+Solution Statements
+
+-   Menggunakan model classification dengan 2 model algoritma sebagai
+    pembanding untuk memilih model yang terbaik yang paling optimal
+    untuk mencapai goals. (Decision Tree dan Random Forest)
+-   Sistem akan dikembangkan dan dievaluasi menggunakan metrik Accuracy,
+    Precision, Recall, F1-Score
+
+Data Understanding
+
+Pada dataset yang digunakan memiliki informasi seperti data demografi
+Data Scientist, keterrampilan dan pengalaman dari seorang Data
+Scientist, jalur karir Data Scientist dan Domain Proyek dari seorang
+Data Scientist. Informasi yang terdapat dalam dataset inipun digunakan
+dan diperoleh mengenai data scientis dan tenaga kerja seorang data
+scientist pada perusahaan outsourcing.
+
+Variabel-variabel pada HR Analytics dataset adalah sebagai berikut:
+
+-   register_id: Pengidentifikasi unik untuk setiap data scientist dalam
+    kumpulan data.
+-   city : Kota tempat data scientist tinggal.
+-   city_development_index: Ukuran tingkat perkembangan kota tempat
+    tinggal data scientist.
+-   gender: Jenis kelamin data scientist.
+-   relevent_experience: Jumlah tahun pengalaman relevan yang dimiliki
+    data scientist.
+-   registered_university: Universitas tempat data scientist lulus.
+-   education_level: Tingkat pendidikan tertinggi yang telah
+    diselesaikan oleh data scientist.
+-   major_discipline: Disiplin utama yang dipelajari data scientist di
+    universitas.
+-   experience: Total jumlah tahun pengalaman yang dimiliki data
+    scientista.
+-   company_size: Ukuran perusahaan tempat data scientist bekerja.
+-   company_type: Jenis perusahaan tempat data scientistbekerja.
+-   last_new_job: Jumlah tahun sejak pekerjaan baru terakhir data
+    scientist.
+-   training_hours: Jumlah jam pelatihan yang telah diterima data
+    scientist.
+-   target: Domain proyek data scientist.
+
+Dataset yang digunakan yaitu "HR Analitics" dengan terdapat 14 Kolom dan
+dengan jumlah data sebanyak 19158 employee atau karyawan sebagai Data
+Scientist. Pada dataset banyak yang bernilai null atau missing value
+sebanyak 8 kolom diantaranya kolom gender, enrolled_university,
+education_level,major_discipline, experiences, company_size,
+company_type, last_new_job italicized text dan terlihat bahwa jumlah
+unique nya sama dengan jumlah row yang ada.
+
+[outlier.png]
+
+Gambar 1. BoxPlot Mendeteksi Outlier
+
+Sebuah Box Plot adalah cara grafis untuk menampilkan distribusi data.
+Ini menunjukkan nilai minimum, kuartil pertama, median, kuartil ketiga,
+dan nilai maksimum. Outlier adalah titik yang berada di luar Box Plot.
+
+Dalam hal ini outlier adalah titik yang berada di atas kuartil ketiga.
+Titik ini lebih jauh dari titik lain daripada titik lainnya dari satu
+sama lain. Hal ini menunjukkan bahwa outlier bukan bagian dari
+distribusi utama data.
+
+Data Preparation
+
+Tahap persiapan data diperlukan untuk memastikan bahwa data bersih dan
+siap untuk dianalisis. Nilai yang hilang dimasukkan untuk menghindari
+bias hasil analisis. Outlier dihilangkan untuk meningkatkan akurasi
+model. Variabel kategori dikodekan untuk mengubahnya menjadi variabel
+numerik, yang dapat digunakan oleh algoritma pembelajaran mesin. Dataset
+dibagi menjadi set pelatihan dan pengujian untuk mengevaluasi kinerja
+model.
+
+teknik data preparation diantaranya setelah diketahui data yang memiliki
+missing values maka dibuatlah kedalam suatu kolom bernama Imputer,
+selanjutnya check outliers, lalu lakukan Encode Categorical Variables,
+setelah ikut lakukan split data hingga train dan test sets.
+
+[Heatmap.png]
+
+Gambar 2. Heatmap Corellation
+
+Gambar 2. menunjukkan korelasi antara fitur-fitur dalam kumpulan data HR
+Analytics. Fitur diwakili oleh baris dan kolom heatmap. Semakin gelap
+selnya, semakin kuat korelasi antara kedua fitur tersebut.
+
+Fitur yang paling berkorelasi adalah enrolee_id dan training_hours. Ini
+tidak mengherankan, karena jumlah jam pelatihan yang diambil oleh
+seorang data scientist kemungkinan besar merupakan prediktor yang baik
+untuk tingkat keahlian mereka.
+
+Fitur terkait lainnya mencakup city_development_index dan
+training_hours, enrolled_university dan training_hours, dan
+major_discipline and training_hours. Hal ini menunjukkan bahwa data
+scientist yang tinggal di kota-kota yang lebih maju, yang telah kuliah
+di universitas yang lebih bergengsi, dan yang mengambil jurusan disiplin
+teknis lebih cenderung mengambil lebih banyak jam pelatihan.
+
+Ada juga beberapa fitur yang berkorelasi negatif. Misalnya,
+ukuran_perusahaan dan jam_pelatihan berkorelasi negatif. Ini menunjukkan
+bahwa data scientist yang bekerja untuk perusahaan besar cenderung tidak
+mengambil banyak jam pelatihan.
+
+Secara keseluruhan, heatmap memberikan ikhtisar bermanfaat tentang
+hubungan antara fitur-fitur dalam kumpulan data HR Analytics. Informasi
+ini dapat digunakan untuk mengidentifikasi fitur yang mungkin penting
+untuk memprediksi domain proyek seorang data scientist.
+
+[Unvariate Analysis.png]
+
+Gambar 3. Contoh salah satu Visualisasi Unvariate Analysis
+
+Dimana pada gambar terlihat memiliki bentuk positif skewed dan variabel
+lain pun hampir sama dengan Gambar 3. tidak ada yang memiliki bentuk
+distribusi normal
+
+[distribusi.png]
+
+Gambar 4. Perbandingan antara Unvariate dan Multivariate Analysis
+
+Gambar menunjukkan bahwa analisis univariate dapat digunakan untuk
+mengidentifikasi distribusi satu variabel, sedangkan analisis
+multivariat dapat digunakan untuk mengidentifikasi hubungan antara
+beberapa variabel.
+
+Modeling
+
+Berikut dibawah ini merupakan tahapan prosesnya:
+
+1.  Pilih algoritma Machine Learning. Ada sejumlah algoritma
+    pembelajaran mesin berbeda yang dapat digunakan untuk memprediksi
+    domain proyek ilmuwan data. Beberapa algoritma yang paling umum
+    termasuk decision trees, random forests.
+2.  Pilih hyperparameter dari algoritma. Hyperparameter adalah parameter
+    yang mengontrol perilaku algoritma pembelajaran mesin.
+    Hyperparameter yang perlu disetel akan bergantung pada algoritme
+    spesifik yang digunakan. Latih model di set pelatihan. Model dilatih
+    pada set pelatihan dengan memasukkan data ke algoritme dan
+    menyesuaikan hyperparameter hingga model mencapai akurasi yang
+    diinginkan.
+3.  Mengevaluasi model pada set pengujian. Model dievaluasi pada set
+    pengujian untuk melihat seberapa baik kinerjanya pada data yang
+    tidak terlihat. Akurasi model biasanya diukur dengan menggunakan
+    metrik seperti akurasi, presisi, recall dan F1-Score.
+4.  Perbaiki model jika perlu. Jika model tidak bekerja dengan baik,
+    hyperparameter dapat disetel lebih lanjut atau algoritma
+    pembelajaran mesin yang berbeda dapat digunakan.
+
+Kelebihan dan kekurangan algoritma:
+
+-   Decision Tree : Decision Tree adalah algoritma yang sederhana dan
+    mudah dipahami. Mereka juga relatif cepat untuk dilatih. Namun,
+    Decision Tree dapat rentan terhadap overfitting.
+-   Random Forests: Random Forests adalah jenis algoritme pembelajaran
+    ansambel yang menggabungkan beberapa Decision Tree. Hal ini membuat
+    mereka kurang rentan terhadap overfitting daripada Decision Tree
+    tunggal. Namun, Random Forests bisa lebih kompleks dan memakan waktu
+    untuk dilatih daripada Decision Tree tunggal.
+
+[Matriks Evaluasi.png]
+
+Tabel 1. Tabel Matrik Model Evaluasi
+
+Dari tabel di atas, kita dapat melihat bahwa model Random Forest
+memiliki kinerja yang sedikit lebih baik daripada model Decision Tree.
+Random Forest memiliki akurasi yang lebih tinggi dan nilai precision,
+recall, serta F1-score yang lebih baik. Oleh karena itu, dalam kasus
+ini, model Random Forest akan menjadi pilihan yang lebih baik untuk
+melakukan prediksi pada dataset ini.
+
+Evaluation
+
+Pada tahap Evaluation ini, berikut adalah beberapa metrik evaluasi yang
+dapat digunakan untuk mengevaluasi kinerja model machine learning:
+
+1.  Accuracy: Accuracy adalah metrik yang paling umum digunakan untuk
+    mengevaluasi performa model machine learning. Ini dihitung sebagai
+    jumlah instance yang diklasifikasikan dengan benar dibagi dengan
+    jumlah total instance.
+2.  Precision : Precision adalah ukuran seberapa akurat model ketika
+    memprediksi kelas positif. Ini dihitung sebagai jumlah instance
+    positif yang diklasifikasikan dengan benar dibagi dengan jumlah
+    total instance yang diprediksi sebagai positif.
+3.  Recall: Recall adalah ukuran berapa banyak contoh positif yang
+    diidentifikasi dengan benar oleh model. Ini dihitung sebagai jumlah
+    instance positif yang diklasifikasikan dengan benar dibagi dengan
+    jumlah total instance positif. 4.* F1 Score: F1 Score* adalah ukuran
+    Accuracy dan precision model. Itu dihitung sebagai rata-rata
+    harmonik dari precision dan daya ingat.
+
+Metrik evaluasi yang digunakan harus sesuai dengan konteks data, rumusan
+masalah, dan solusi yang diinginkan. Misalnya, jika tujuannya adalah
+untuk mengidentifikasi semua kejadian positif, maka ingatan adalah
+metrik yang lebih penting daripada precision. Namun, jika tujuannya
+adalah untuk meminimalkan jumlah positif palsu, maka precision merupakan
+metrik yang lebih penting daripada penarikan kembali.
+
+Hasil proyek dapat dijelaskan berdasarkan metrik evaluasi yang
+digunakan. Misalnya, jika Accuracy model adalah 80%, maka model
+mengklasifikasikan 80% instance dengan benar. Jika ketepatan model
+adalah 90%, maka model tersebut dengan benar mengidentifikasi 90% kasus
+positif. Jika penarikan kembali model adalah 70%, maka model tersebut
+dengan benar mengidentifikasi 70% kasus positif.
+
+Rumus metrik dan cara kerjanya adalah sebagai berikut:
+
+-   Accuracy: Accuracy = (True Positives + True Negatives) / (Total
+    Instances)
+-   Precision: Precision = True Positives / (True Positives + False
+    Positives)
+-   Recall: Recall = True Positives / (True Positives + False Negatives)
+-   F1 score: F1 Score = 2 (Precision * Recall) / (Precision + Recall)*
+
+Metrik evaluasi yang dipakai adalah ukuran atau parameter yang digunakan
+untuk mengevaluasi performa dari model Decision Tree dan Random Forest
+dalam memprediksi calon Data Scientist yang sesuai atau tidak sesuai
+dengan posisi tersebut. Metrik evaluasi yang digunakan dalam kasus ini
+adalah Akurasi (Accuracy), Precision, Recall, dan F1-Score.
+
+1.  Akurasi (Accuracy): Merupakan persentase prediksi yang benar dari
+    keseluruhan data uji. Akurasi mengukur sejauh mana model mampu
+    mengklasifikasikan dengan benar apakah seorang calon Data Scientist
+    akan cocok atau tidak cocok untuk posisi tersebut.
+
+2.  Precision: Mengukur persentase calon yang diprediksi sesuai dengan
+    keterampilan dan minat yang benar-benar sesuai (true positives) dari
+    total calon yang diprediksi sesuai (true positives dan false
+    positives). Precision sangat relevan dalam mengurangi biaya
+    pergantian Data Scientist, karena tujuan utamanya adalah untuk
+    mengidentifikasi benar-benar calon Data Scientist yang sesuai dengan
+    posisi tersebut.
+
+3.  Recall: Mengukur persentase keberhasilan model dalam
+    mengidentifikasi nilai positif, yaitu persentase dari prediksi
+    positif yang benar terhadap seluruh nilai positif pada data uji.
+    Recall juga relevan dalam mengurangi biaya pergantian Data
+    Scientist, karena mengindikasikan seberapa baik model dapat
+    menemukan calon yang sesuai di antara semua calon yang sebenarnya
+    sesuai.
+
+4.  F1-Score: Merupakan rata-rata harmonik dari precision dan recall,
+    memberikan ukuran keseluruhan performa model dalam memprediksi nilai
+    positif. F1-Score berguna untuk menyediakan keseluruhan penilaian
+    tentang kinerja model dalam memprediksi calon Data Scientist yang
+    sesuai dengan posisi tersebut.
+
+Hasil penerapan dari metrik evaluasi menunjukkan bahwa model* Random
+Forest* memiliki performa yang lebih baik daripada model Decision Tree.
+Dengan akurasi, precision, recall, dan F1-Score yang lebih tinggi, model
+Random Forest mampu memprediksi calon Data Scientist yang sesuai dengan
+lebih baik daripada model Decision Tree. Oleh karena itu, model Random
+Forest lebih cocok digunakan untuk melakukan prediksi pada dataset ini,
+karena memiliki kinerja yang lebih baik dalam mencapai tujuan efisiensi
+perekrutan dan mengurangi biaya pergantian Data Scientist.
+
+Referensi
+
+Hasil penelitian atau referensi terkait:
+
+-   "HR Analytics: Perubahan Pekerjaan Ilmuwan Data" oleh Arashnik
+    (2021). Makalah ini menyajikan kumpulan data ilmuwan data yang telah
+    berganti pekerjaan, dan membahas tantangan menemukan domain proyek
+    dari data.(https://arxiv.org/abs/2101.04778)
+-   "Survei Pembelajaran Mesin untuk Analisis SDM" oleh Kumar et al.
+    (2018). Makalah ini mensurvei literatur tentang pembelajaran mesin
+    untuk analitik SDM, dan membahas tantangan dalam memprediksi domain
+    proyek dari data.(https://arxiv.org/abs/1801.03383)
+-   "Pendekatan Berbasis Data untuk Memprediksi Domain Proyek Ilmuwan
+    Data" oleh Wang et al. (2020). Makalah ini menyajikan pendekatan
+    berbasis data untuk memprediksi domain proyek ilmuwan data, dan
+    membahas tantangan dari pendekatan tersebut.
+    (https://arxiv.org/abs/2001.08659)
